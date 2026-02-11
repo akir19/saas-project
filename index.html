@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codien - Transform Legacy Tests</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="img/logo.svg" alt="Logo">
+                </div>
+                
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Features</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Solutions</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <a href="#" class="btn-outline btn-outline--small">Login</a>
+                    <button class="btn-primary btn-primary--small">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero__badge badge">
+                <span class="badge__text">AI-Powered Migration</span>
+            </div>
+            <div class="hero__inner">
+            <div class="hero__content">
+                <h1 class="hero__title">Transform Legacy Tests to <span>Playwright</span> in Minutes</h1>
+                <p class="hero__descr">Codien uses advanced AI to automatically convert your Protractor and Selenium tests to Playwright format with unmatched accuracy, saving weeks of manual work.</p>
+                <div class="hero__actions">
+                    <a href="#" class="btn-primary">Start Free Trial <span>→</span></a>
+                    <a href="#" class="btn-outline">See Live Demo</a>
+                </div>
+            </div>
+                <div class="hero__image">
+                    <img src="img/code-preview.png" alt="Code Preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features__intro">
+                <h2 class="features__intro-title">Stop Wrestling with Legacy Tests</h2>
+                <div class="features__intro-subtitle">
+                    <span>Protractor is deprecated.</span>
+                    <span>Selenium is complex.</span>
+                    <span>Playwright is the future.</span>
+                </div>
+                <p class="features__intro-descr">
+                    Codien converts your entire test suite to Playwright with <span>one click</span>
+                </p>
+            </div>
+
+            <div class="features__comparison comparison">
+                <h3 class="comparison__title">From Complex Legacy Code to Modern Playwright</h3>
+                
+                <div class="comparison__grid">
+                    <div class="comparison__card">
+                        <div class="comparison__card-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="file-name">login-test.js</span>
+                            <span class="badge">Selenium/Protractor</span>
+                        </div>
+                        <div class="comparison__card-body">
+                            <div class="code-box code-box--legacy">
+<pre><code><span class="comment">// Protractor - Complex</span>
+<span class="keyword">describe</span>(<span class="string">'Login Test'</span>, <span class="keyword">function</span>() {
+  <span class="keyword">it</span>(<span class="string">'should login user'</span>, <span class="keyword">function</span>() {
+    browser.<span class="function">get</span>(<span class="string">'/login'</span>);
+    <span class="function">element</span>(by.<span class="function">model</span>(<span class="string">'user.email'</span>)).<span class="function">sendKeys</span>(<span class="string">'test@example.com'</span>);
+    <span class="function">element</span>(by.<span class="function">model</span>(<span class="string">'user.password'</span>)).<span class="function">sendKeys</span>(<span class="string">'password123'</span>);
+    <span class="function">element</span>(by.<span class="function">buttonText</span>(<span class="string">'Login'</span>)).<span class="function">click</span>();
+    <span class="function">expect</span>(<span class="function">element</span>(by.<span class="function">binding</span>(<span class="string">'user.name'</span>)).<span class="function">getText</span>()).<span class="function">toBe</span>(<span class="string">'Welcome!'</span>);
+  });
+});</code></pre>
+</div>
+                        </div>
+                        <div class="comparison__card-footer">
+                            <div class="legend-item"><span>😤</span> Verbose</div>
+                            <div class="legend-item"><span>⏰</span> Slow</div>
+                            <div class="legend-item"><span>🔧</span> Complex</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison__card">
+                        <div class="comparison__card-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <span class="file-name">login-test.spec.ts</span>
+                            <span class="badge">Auto-Generated</span>
+                        </div>
+                        <div class="comparison__card-body">
+                            <div class="code-box code-box--modern">
+<pre><code><span class="comment">// Playwright - Clean & Modern</span>
+<span class="keyword">import</span> { test, expect } <span class="keyword">from</span> <span class="string">'@playwright/test'</span>;
+
+<span class="keyword">test</span>(<span class="string">'should login user'</span>, <span class="keyword">async</span> ({ page }) => {
+  <span class="keyword">await</span> page.<span class="function">goto</span>(<span class="string">'/login'</span>);
+  <span class="keyword">await</span> page.<span class="function">fill</span>(<span class="string">'#username'</span>, <span class="string">'user@test.com'</span>);
+  <span class="keyword">await</span> page.<span class="function">fill</span>(<span class="string">'#password'</span>, <span class="string">'password123'</span>);
+  <span class="keyword">await</span> page.<span class="function">click</span>(<span class="string">'.login-btn'</span>);
+  <span class="keyword">await</span> <span class="function">expect</span>(page).<span class="function">toHaveURL</span>(<span class="string">/.*dashboard/</span>);
+});</code></pre>
+</div>
+                        </div>
+                        <div class="comparison__card-footer">
+                            <div class="legend-item"><span>✨</span> Clean</div>
+                            <div class="legend-item"><span>⚡</span> Fast</div>
+                            <div class="legend-item"><span>🎯</span> Modern</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary features__btn">
+                    One-Click Conversion
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

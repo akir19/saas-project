@@ -1,0 +1,206 @@
+.hero {
+    padding-top: 80px; 
+    padding-bottom: 100px;
+    background-color: $bg-black;
+    overflow: hidden;
+    
+    &__badge {
+        margin-bottom: 32px; 
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between; 
+        align-items: flex-start; 
+        gap: 0px;
+    }
+
+    &__content {
+        width: 624px; 
+        flex-shrink: 0;
+    }    
+
+    &__title {
+        font-size: 48px;
+        line-height: 1.1;
+        margin-bottom: 24px; 
+        margin-top: 0;
+        font-weight: 800;
+        color: $text-main;
+
+        span {
+            color: $accent-color; 
+        }
+    }
+
+    &__descr {
+        font-size: 18px;
+        line-height: 1.6;
+        color: $text-gray;
+        margin-bottom: 40px;
+        max-width: 569px; 
+        text-align: left;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 16px; 
+    }
+
+    &__image {
+        flex: 0 1 50%;
+        max-width: 624px;
+        margin-top: 10px; 
+        
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+        }
+    }
+}
+
+// Бейдж "AI-Powered Migration"
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    background: rgba(21, 93, 252, 0.08); 
+    border: 1px solid rgba(21, 93, 252, 0.2);
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+        background: rgba(21, 93, 252, 0.15);
+        border-color: rgba(21, 93, 252, 0.4);
+    }
+
+    &__text {
+        color: $accent-color;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::before {
+            content: '✦'; 
+            font-size: 14px;
+        }
+    }
+}
+
+// Кнопки
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: $accent-color;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap; 
+    transition: background 0.3s, transform 0.2s;
+    
+    &:hover {
+        background: lighten($accent-color, 5%);
+        transform: translateY(-1px);
+    }
+
+    svg { 
+        transition: transform 0.3s; 
+    }
+    &:hover svg {
+        transform: translateX(4px);
+    }
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid $accent-color;
+    color: $accent-color;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s;
+
+    &:hover {
+        border-color: $text-main;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    // Модификатор для хедера (уменьшаем отступы)
+    &--small {        
+        margin-right: 12px; // Расстояние до Sign Up
+    }
+}
+
+// // Адаптив (Планшеты и мобилки)
+@media (max-width: 1100px) {
+    .hero {
+        padding-top: 40px;
+
+        &__inner {
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+        }
+
+        &__badge {
+            display: flex;       
+            margin: 0 auto 24px; 
+            justify-content: center;
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            order: 1; // Текст будет первым
+        }
+
+        &__title {
+            font-size: 32px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__descr {
+            max-width: 500px;
+            margin: 0 auto 32px; 
+        }
+
+        &__image {
+            width: 100%;
+            max-width: 550px;
+            order: 2; 
+            margin-bottom: 30px;
+        }
+
+        &__actions {
+            width: 100%;
+            justify-content: center;
+            order: 3; // Кнопки будут в самом низу
+        }
+    }
+}

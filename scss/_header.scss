@@ -1,0 +1,103 @@
+.header {
+    background-color: $bg-header;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        img {
+            display: block;
+            height: 32px; 
+        }
+    }
+
+    &__login {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7); 
+        text-decoration: none;
+        margin-right: 24px; // Отступ до кнопки Sign Up
+        transition: color 0.3s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        &:hover {
+            color: #ffffff; 
+        }
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        list-style: none;
+        gap: 32px; // Расстояние между ссылками
+    }
+
+    &__link {
+        color: $text-main;
+        text-decoration: none;
+        font-size: 16px;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+
+    &--primary {
+        background-color: $accent-color;
+        color: white;
+    }
+
+    &--secondary {
+        background-color: transparent;
+        color: $text-main;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+.nav__link--active {
+    background-color: $accent-color;
+    padding: 6px 16px;
+    border-radius: 8px;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__inner {
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px 0;
+        }
+
+        .nav {
+            display: none; // Убираем ссылки, чтобы не мешались
+        }
+
+        &__actions {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 10px;
+        }
+    }
+}
