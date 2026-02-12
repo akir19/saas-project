@@ -681,6 +681,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 56px;
+  margin-bottom: 80px;
 }
 
 .features-grid {
@@ -763,4 +764,213 @@ body {
 }
 .feature-card .icon-chat {
   --accent-color: #3b82f6;
+}
+
+.process {
+  padding: 100px 0;
+  background-color: #000;
+}
+.process__header {
+  text-align: center;
+  max-width: 1280px;
+  margin: 0 auto 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.process__title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 40px;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.process__subtitle {
+  color: #9ca3af;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "Inter", sans-serif;
+  max-width: 672px;
+  margin: 0 auto 24px;
+}
+.process__badge {
+  color: #0284c7;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  text-transform: none;
+}
+.process__timeline {
+  position: relative;
+  max-width: 896px;
+  margin: 0 auto;
+  padding-left: 80px;
+}
+.process__timeline::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #27272a;
+  z-index: 1;
+}
+.process__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 80px;
+}
+.process__footer .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 32px;
+  background: #0284c7;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.process__footer .btn-primary:hover {
+  background: #0274ae;
+}
+.process__footer .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  min-width: 176px;
+  background: transparent;
+  color: #0284c7;
+  border: 1px solid #0284c7;
+  border-radius: 8px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.process__footer .btn-secondary:hover {
+  background: rgba(2, 132, 199, 0.05);
+  border-color: #38bdf8;
+}
+
+.process-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.process-step:last-child {
+  margin-bottom: 0;
+}
+.process-step__number {
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: #0284c7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 10;
+}
+.process-step__icon-box {
+  position: absolute;
+  left: 0;
+  margin-left: -80px;
+  width: 64px;
+  height: 64px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.process-step__icon img {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+.process-step__card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+}
+.process-step__name {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.process-step__text {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.figma-icon {
+  width: 64px;
+  height: 64px;
+  background: #27272a;
+  border-radius: 50%;
+  position: relative;
+}
+.figma-icon__inner {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 48px;
+  height: 48px;
+  background: #1f1f1f;
+  border-radius: 50%;
+}
+.figma-icon__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.figma-icon__content .icon-lime-bg {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  background: #a3e635;
+}
+.figma-icon__content .icon-white-line-v {
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  width: 0;
+  height: 8px;
+  outline: 2.5px solid white;
+}
+.figma-icon__content .icon-white-line-h {
+  position: absolute;
+  left: 20px;
+  top: 26px;
+  width: 8px;
+  height: 0;
+  outline: 2.5px solid white;
 }/*# sourceMappingURL=main.css.map */
