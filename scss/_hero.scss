@@ -3,6 +3,11 @@
     padding-bottom: 100px;
     background-color: $bg-black;
     overflow: hidden;
+
+    @media (max-width: 991px) {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
     
     &__badge {
         margin-bottom: 32px; 
@@ -12,12 +17,27 @@
         display: flex;
         justify-content: space-between; 
         align-items: flex-start; 
-        gap: 0px;
+        gap: 30px;
+
+        @media (max-width: 1100px) {
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+            gap: 48px;
+        }
     }
 
     &__content {
         width: 624px; 
         flex-shrink: 0;
+
+        @media (max-width: 1100px) {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
     }    
 
     &__title {
@@ -31,6 +51,10 @@
         span {
             color: $accent-color; 
         }
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
     }
 
     &__descr {
@@ -40,12 +64,30 @@
         margin-bottom: 40px;
         max-width: 569px; 
         text-align: left;
+
+        @media (max-width: 1100px) {
+            text-align: center;
+            margin: 0 auto 32px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
     }
 
     &__actions {
         display: flex;
         align-items: center;
         gap: 16px; 
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            width: 100%;
+            
+            .btn-primary, .btn-outline {
+                width: 100%;
+            }
+        }
     }
 
     &__image {
@@ -53,6 +95,12 @@
         max-width: 624px;
         margin-top: 10px; 
         
+        @media (max-width: 1100px) {
+            max-width: 550px;
+            width: 100%;
+            margin-top: 0;
+        }
+
         img {
             width: 100%;
             height: auto;
@@ -145,62 +193,5 @@
     &:hover {
         border-color: $text-main;
         background: rgba(255, 255, 255, 0.05);
-    }
-
-    // Модификатор для хедера (уменьшаем отступы)
-    &--small {        
-        margin-right: 12px; // Расстояние до Sign Up
-    }
-}
-
-// // Адаптив (Планшеты и мобилки)
-@media (max-width: 1100px) {
-    .hero {
-        padding-top: 40px;
-
-        &__inner {
-            flex-direction: column; 
-            align-items: center;
-            text-align: center;
-        }
-
-        &__badge {
-            display: flex;       
-            margin: 0 auto 24px; 
-            justify-content: center;
-        }
-
-        &__content {
-            width: 100%;
-            max-width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            order: 1; // Текст будет первым
-        }
-
-        &__title {
-            font-size: 32px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        &__descr {
-            max-width: 500px;
-            margin: 0 auto 32px; 
-        }
-
-        &__image {
-            width: 100%;
-            max-width: 550px;
-            order: 2; 
-            margin-bottom: 30px;
-        }
-
-        &__actions {
-            width: 100%;
-            justify-content: center;
-            order: 3; // Кнопки будут в самом низу
-        }
     }
 }
