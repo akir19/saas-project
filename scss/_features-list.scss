@@ -1,24 +1,42 @@
 .features-list {
-  padding: 0px 0;
+  padding: 80px 0; // Добавил отступы сверху и снизу
   background-color: #000;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
 
   &__header {
     text-align: center;
     margin-bottom: 64px;
+    padding: 0 15px; // Чтобы текст не лип к краям на мобилках
+
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
     font-size: 36px;
     letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
   }
 
   &__subtitle {
     max-width: 700px; 
-    margin: 0 auto 32px;
+    margin: 0 auto 24px;
     font-size: 18px;
     line-height: 1.5;
     color: #9ca3af;
-    margin: 23.5px auto 7.5px;    
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   &__badge {
@@ -27,20 +45,38 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: block; // Чтобы отступы работали корректно
   }
 
   &__footer {
     display: flex;
     justify-content: center;
     margin-top: 56px;
-    margin-bottom: 80px;
+
+    @media (max-width: 576px) {
+      margin-top: 40px;
+      padding: 0 15px;
+
+      .btn-primary {
+        width: 100%; // Кнопка на весь экран
+      }
+    }
   }
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); // 3 колонки
+  grid-template-columns: repeat(3, 1fr); 
   gap: 32px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr); // 2 колонки на планшетах
+    gap: 24px;
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr; // 1 колонка на мобилках
+  }
 }
 
 .feature-card {
@@ -49,18 +85,24 @@
   border-radius: 16px;
   padding: 32px;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-  // Создаем переменную для цвета по умолчанию
   --accent-color: #3f3f46;
 
   &:hover {
     transform: translateY(-8px);
     border-color: var(--accent-color);
     
+    @media (max-width: 768px) {
+      transform: none; // Убираем ховер-эффект на тач-скринах, чтобы не дергалось
+    }
+
     .feature-card__icon {
       background: var(--accent-color);
       box-shadow: 0 0 20px var(--accent-color);
-      color: #fff; // Если там иконка-шрифт или текст
+      color: #fff; 
       transform: scale(1.1);
     }
   }
@@ -90,6 +132,7 @@
     color: #9ca3af;
     line-height: 1.6;
     margin-bottom: 24px;
+    flex-grow: 1; // Растягивает текст, чтобы кнопка Learn More всегда была снизу
   }
 
   &__link {
@@ -100,6 +143,7 @@
     align-items: center;
     gap: 8px;
     font-size: 14px;
+    margin-top: auto;
 
     span {
       transition: transform 0.2s ease;
@@ -110,11 +154,12 @@
     }
   }
 
-  // Цвета для каждой иконки
-  .icon-magic { --accent-color: #8b5cf6; }  // Фиолетовый
-  .icon-micro { --accent-color: #ec4899; }  // Розовый
-  .icon-folder { --accent-color: #f59e0b; } // Оранжевый
-  .icon-screen { --accent-color: #06b6d4; } // Бирюзовый
-  .icon-chart { --accent-color: #10b981; }  // Зеленый
-  .icon-chat { --accent-color: #3b82f6; }   // Синий
+  // Цвета (проверь названия классов в HTML, у тебя там везде icon-magic, 
+  // но в CSS были разные — я оставил логику под разные иконки)
+  .icon-magic { --accent-color: #8b5cf6; }  
+  .icon-micro { --accent-color: #ec4899; }  
+  .icon-folder { --accent-color: #f59e0b; } 
+  .icon-screen { --accent-color: #06b6d4; } 
+  .icon-chart { --accent-color: #10b981; }  
+  .icon-chat { --accent-color: #3b82f6; }   
 }

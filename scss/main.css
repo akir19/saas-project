@@ -802,24 +802,46 @@ body.no-scroll {
 }
 
 .features-list {
-  padding: 0px 0;
+  padding: 80px 0;
   background-color: #000;
+}
+@media (max-width: 768px) {
+  .features-list {
+    padding: 60px 0;
+  }
 }
 .features-list__header {
   text-align: center;
   margin-bottom: 64px;
+  padding: 0 15px;
+}
+@media (max-width: 768px) {
+  .features-list__header {
+    margin-bottom: 40px;
+  }
 }
 .features-list__title {
   font-size: 36px;
   letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .features-list__title {
+    font-size: 28px;
+  }
 }
 .features-list__subtitle {
   max-width: 700px;
-  margin: 0 auto 32px;
+  margin: 0 auto 24px;
   font-size: 18px;
   line-height: 1.5;
   color: #9ca3af;
-  margin: 23.5px auto 7.5px;
+}
+@media (max-width: 768px) {
+  .features-list__subtitle {
+    font-size: 16px;
+  }
 }
 .features-list__badge {
   color: #0284c7;
@@ -827,18 +849,38 @@ body.no-scroll {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: block;
 }
 .features-list__footer {
   display: flex;
   justify-content: center;
   margin-top: 56px;
-  margin-bottom: 80px;
+}
+@media (max-width: 576px) {
+  .features-list__footer {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+  .features-list__footer .btn-primary {
+    width: 100%;
+  }
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+@media (max-width: 1100px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 650px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature-card {
@@ -847,11 +889,19 @@ body.no-scroll {
   border-radius: 16px;
   padding: 32px;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   --accent-color: #3f3f46;
 }
 .feature-card:hover {
   transform: translateY(-8px);
   border-color: var(--accent-color);
+}
+@media (max-width: 768px) {
+  .feature-card:hover {
+    transform: none;
+  }
 }
 .feature-card:hover .feature-card__icon {
   background: var(--accent-color);
@@ -882,6 +932,7 @@ body.no-scroll {
   color: #9ca3af;
   line-height: 1.6;
   margin-bottom: 24px;
+  flex-grow: 1;
 }
 .feature-card__link {
   color: #0284c7;
@@ -891,6 +942,7 @@ body.no-scroll {
   align-items: center;
   gap: 8px;
   font-size: 14px;
+  margin-top: auto;
 }
 .feature-card__link span {
   transition: transform 0.2s ease;
