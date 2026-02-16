@@ -1,24 +1,34 @@
 .solutions {
-    // 1. Отступ от предыдущей секции (Hero) до первого блока
     padding-top: 48px; 
-    padding-bottom: 80px; // Нижний отступ всей секции
+    padding-bottom: 80px; 
     
+    @media (max-width: 768px) {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
     .container {
         display: flex;
-        flex-direction: column;        
-        // 2. Расстояние МЕЖДУ блоками внутри секции
+        flex-direction: column;         
         gap: 48px;
+
+        @media (max-width: 768px) {
+            gap: 32px;
+        }
     }
 }
 
 .sol-card {
-    height: auto; // На всякий случай сбрасываем фиксированную высоту
-    position: relative; // Вместо absolute
-
+    height: auto; 
+    position: relative; 
     border-radius: 16px;
     outline: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 40px 20px; // Увеличил паддинг для десктопа
     text-align: center;
+
+    @media (max-width: 768px) {
+        padding: 30px 15px;
+    }
 
     &--dark {
         background: #1c1c1c;
@@ -37,10 +47,14 @@
     }
 
     &__title {
-        font-size: 20px;
+        font-size: 24px; // Чуть увеличил для читаемости
         font-weight: 700;
         color: #ffffff;
         margin-bottom: 24px;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
     }
 
     &__grid {
@@ -48,19 +62,38 @@
         justify-content: space-around;
         gap: 24px;
         margin-top: 32px;
+
+        @media (max-width: 991px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); // 2 в ряд на планшетах
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr; // 1 в ряд на телефонах
+            gap: 32px;
+        }
     }
 
     &__subtitle {
         color: #a1a1aa;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.5;
-        max-width: 580px; // Это заставит текст разбиться на 2 строки
-        margin: 0 auto 40px; // Центрируем сам блок текста
+        max-width: 700px; 
+        margin: 0 auto 40px; 
         text-align: center;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    &__desc {
+        color: #9ca3af;
+        margin-bottom: 16px;
     }
 }
 
-// Элементы со статусом (🔴, 🟡, 🔵)
+// Элементы со статусом
 .status-item {
     flex: 1;
     display: flex;
@@ -72,17 +105,13 @@
         height: 64px;
         border-radius: 50%;
         margin: 0 auto 12px;
-        
         display: flex;
-        /* Убираем центровку и двигаем шарик вручную */
-        align-items: flex-start;   // Прижать к верху
-        justify-content: flex-end; // Прижать к правому краю
-        
-        padding-top: 14px;  // Отступ сверху (регулируй, чтобы было как в Figma)
-        padding-right: 14px; // Отступ справа
-        
+        align-items: flex-start;   
+        justify-content: flex-end; 
+        padding-top: 14px;  
+        padding-right: 14px; 
         font-size: 24px;
-        line-height: 1; // Чтобы высота строки не мешала позиционированию
+        line-height: 1; 
         
         &--red { background: rgba(239, 68, 68, 0.1); }
         &--yellow { background: rgba(253, 186, 116, 0.1); }
@@ -91,7 +120,7 @@
 
     &__name {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 4px;
         &--red { color: #f87171; }
         &--yellow { color: #fdba74; }
@@ -105,17 +134,21 @@
     }
 
     &__check {
-        font-size: 12px;
+        font-size: 13px;
         color: #a8a29e;
         &--soon { color: #fdba74; }
     }
 }
 
-// Стили для блока сравнения (Блок 2)
+// Блок сравнения (Блок 2)
 .sol-card__comparison-grid {
     display: flex;
     gap: 32px;
     margin: 32px 0;
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+    }
 }
 
 .benefit-box {
@@ -131,16 +164,14 @@
         list-style: none;
         padding: 0;
         li {
-            color: #9ca3af; font-size: 14px; margin-bottom: 10px;
-            display: flex; gap: 8px;
-            // &::before { content: "→"; color: #57534e; }
+            color: #9ca3af; font-size: 14px; margin-bottom: 12px;
+            display: flex; gap: 10px;
             &::before { 
-                content: "→"; // Используем стандартный символ, он в коде выглядит отлично
-                color: #4ade80; // Зеленый цвет
+                content: "→"; 
+                color: #4ade80; 
                 font-weight: bold;
                 font-size: 18px;
-                line-height: 1;
-                margin-top: -2px; // Ювелирная подгонка по высоте
+                line-height: 1.2;
             }
         }
     }
@@ -151,6 +182,10 @@
     font-weight: 700;
     font-size: 18px;
     margin-top: 24px;
+
+    @media (max-width: 576px) {
+        font-size: 16px;
+    }
 }
 
 // Кнопки для CTA (Блок 4)
@@ -159,6 +194,14 @@
     justify-content: center;
     gap: 16px;
     margin-top: 24px;
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: center;
+        .btn-primary, .btn-outline {
+            width: 100%;
+        }
+    }
 }
 
 .sol-card__highlight {
