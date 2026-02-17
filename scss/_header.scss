@@ -52,6 +52,7 @@ body.no-scroll {
     &__actions {
         display: flex;
         align-items: center;
+        gap: 12px; // Разлепляем кнопки на десктопе
 
         @media (max-width: 991px) {
             flex-direction: column;
@@ -59,31 +60,35 @@ body.no-scroll {
             max-width: 280px;
             gap: 15px;
 
-            .btn-outline, .btn-primary, .btn-primary--small, .btn-outline--small {
+            // Расширяем кнопки на всю ширину в мобильном меню
+            .btn, .btn-outline, .btn-primary, .btn-secondary {
                 width: 100% !important;
-                text-align: center;
                 justify-content: center;
-                display: flex;
             }
         }
     }
 
     &__login {
+        // Чтобы кнопка Login была такой же высоты, как соседняя
+        // мы наследуем поведение .btn, если это ссылка
         font-size: 14px;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none;
-        margin-right: 24px;
         transition: color 0.3s ease;
         background: none;
         border: none;
         cursor: pointer;
         padding: 0;
+        display: inline-flex;
+        align-items: center;
+        height: 44px; // Синхронизируем высоту с .btn
 
         &:hover { color: #ffffff; }
 
         @media (max-width: 991px) {
             margin-right: 0;
+            height: auto; // На мобилке пусть ведет себя как обычный блок
         }
     }
 
@@ -91,7 +96,7 @@ body.no-scroll {
         display: none;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px; // Чуть увеличил для удобства
+        width: 30px; 
         height: 20px;
         background: none;
         border: none;
@@ -106,7 +111,7 @@ body.no-scroll {
             height: 2px;
             background-color: #fff;
             transition: all 0.3s ease-in-out;
-            transform-origin: center; // Поворот строго из центра
+            transform-origin: center;
         }
 
         &.active {
@@ -167,24 +172,37 @@ body.no-scroll {
     }
 }
 
+// ГЛОБАЛЬНЫЙ КЛАСС КНОПОК
 .btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    height: 44px;         // Фиксированная высота для всех кнопок
+    padding: 0 24px;      // Паддинги только по бокам
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
     text-decoration: none;
+    box-sizing: border-box; // Чтобы border не добавлял лишние пиксели к высоте
+    transition: all 0.2s ease;
+    border: 1px solid transparent; // Резервируем место под границу
 
     &--primary {
         background-color: $accent-color;
         color: white;
+        &:hover {
+            filter: brightness(1.1);
+        }
     }
 
     &--secondary {
         background-color: transparent;
         color: $text-main;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.2);
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
     }
 }
